@@ -1,9 +1,11 @@
+package aim ;
 
 public class Orders {
 	public static final int MAX_NUMBERS_ORDERED = 10 ;
 	private DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
 	private int qtyOrdered =0 ;
 	private MyDate dateOrdered ;
+	private static int nbOrders = 0;
 	//public Orders(MyDate dateOrdered) {
 	//	super();
 	//	this.dateOrdered = dateOrdered;
