@@ -1,6 +1,9 @@
-package aim ;
+package hust.soict.hedspi.aims.order;
 
+import hust.soict.hedspi.aims.disc.DigitalVideoDisc;
+import hust.soict.hedspi.aims.utils.MyDate;
 public class Orders {
+	public static final int MAX_LIMITTED_ORDERED = 4;
 	public static final int MAX_NUMBERS_ORDERED = 10 ;
 	private DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
 	private int qtyOrdered =0 ;
@@ -10,7 +13,13 @@ public class Orders {
 	//	super();
 	//	this.dateOrdered = dateOrdered;
 	//}
-
+	public static boolean checkLimitedOrdered() {
+		return nbOrders < MAX_LIMITTED_ORDERED;
+	}
+	public Orders(MyDate today) {
+		Orders.nbOrders++;
+		this.dateOrdered = today;
+	}
 	public int getQtyOrdered() {
 		return qtyOrdered;
 	}
@@ -73,5 +82,29 @@ public class Orders {
 			sum += itemsOrdered[i].getCost() ;
 		}
 		return sum;
+	}
+	public void print() {
+		System.out.println("***********************Order***********************");
+		System.out.print("Date: ");
+		dateOrdered.print();
+		System.out.println();
+		System.out.println("Ordered Items");
+		if(qtyOrdered != 0) {
+			for(int i = 0; i < qtyOrdered; i++) {
+				System.out.println(String.valueOf(i + 1) + ". " + itemsOrdered[i].toString());
+			}
+		}
+		System.out.println("Total cost: " + totalCost());
+		System.out.println("**************************************************");
+	}
+	public DigitalVideoDisc getALuckyItem() {
+		double randomDouble = Math.random();
+		randomDouble = randomDouble * 1000;
+		int randomInt = (int) randomDouble % qtyOrdered;
+		return itemsOrdered[randomInt];
+	}
+	public void setFreeItems() {
+		DigitalVideoDisc freeItem = getALuckyItem();
+		freeItem.setCost(0f);
 	}
 }

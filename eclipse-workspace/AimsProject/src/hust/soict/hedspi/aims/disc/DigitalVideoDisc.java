@@ -1,4 +1,5 @@
-package aim ;
+package hust.soict.hedspi.aims.disc;
+
 public class DigitalVideoDisc {
 	private String title;
 	private String category;
@@ -62,6 +63,20 @@ public class DigitalVideoDisc {
 		this.category = category;
 		this.director = director;
 		this.cost = cost;
+	}
+	public boolean search(String title) {
+		String[] words = title.toLowerCase().split(" ");
+		String temp = this.getTitle().toLowerCase();
+		if(title.equalsIgnoreCase(this.getTitle())) {
+			return true;
+		}else{
+			for(int i = 0; i < words.length; i++) {
+				if(!temp.contains(words[i])) {
+					return false;
+				}
+			}
+			return true;
+		}
 	}
 	
 }

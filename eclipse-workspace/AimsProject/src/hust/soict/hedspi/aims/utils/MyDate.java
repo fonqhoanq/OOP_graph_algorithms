@@ -1,5 +1,5 @@
-package aim;
-import utils.*;
+package hust.soict.hedspi.aims.utils;
+import hust.soict.hedspi.aims.utils.DateUtils;
 public class MyDate {
 	private int day;
 	private int month;
