@@ -72,7 +72,7 @@ public class MyDate {
 		//System.out.println(monthStr + " " + dayStr + " " + yearStr);
 		
 	}
-	public String print(String format) {
+	public String viewDate(String format) {
 		String output = new String();
 		switch (format) {
 			case "yyyy-mm-dd": {

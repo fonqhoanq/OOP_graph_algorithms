@@ -50,8 +50,8 @@ public class DateUtils {
 	
 	
 	public static int compareTwDate(MyDate date1, MyDate date2) {
-		String dateStr1 = date1.print("yyyy-mm-dd");
-		String dateStr2 = date2.print("yyyy-mm-dd");
+		String dateStr1 = date1.viewDate("yyyy-mm-dd");
+		String dateStr2 = date2.viewDate("yyyy-mm-dd");
 		return dateStr1.compareTo(dateStr2);
 	}
 
