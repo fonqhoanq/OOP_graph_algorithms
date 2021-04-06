@@ -13,6 +13,11 @@ public abstract class media {
 		this(title) ;
 		this.category = category ;
 	}
+	public media(String title,String category,float cost) {
+		this.title = title ; 
+		this.category = category ;
+		this.cost = cost;
+	}
 	public String getTitle() {
 		return title;
 	}

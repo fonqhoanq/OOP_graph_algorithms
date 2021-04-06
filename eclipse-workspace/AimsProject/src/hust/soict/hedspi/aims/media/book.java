@@ -6,7 +6,7 @@ import java.util.List;
 public class book extends media {
 	private List<String> authors = new ArrayList<String>();
 	public String displayInformation() {
-		System.out.println(title+" "+category );
+		System.out.println(title+" "+category + " "+ cost + " " + authors);
 		return null;
 	}
 	public void addAuthor(String authorName) {
@@ -24,11 +24,13 @@ public class book extends media {
 		super(title);
 	}
 	public book(String title,String category) {
-		super(title);
-		this.category = category ;
-	}
-	public book(String title, String category,List<String> authors) {
 		super(title,category);
+	}
+	public book(String title,String category,float cost) {
+		super(title,category,cost);
+	}
+	public book(String title, String category,List<String> authors,float cost ){
+		super(title,category,cost);
 		this.authors = authors;
 	}
 	

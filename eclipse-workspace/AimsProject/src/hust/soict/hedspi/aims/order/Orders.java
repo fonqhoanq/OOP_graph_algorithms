@@ -30,12 +30,11 @@ public class Orders {
 		if (itemsOrdered.isEmpty()) {
 			System.out.println("Order is empty");
 		} 
-		else if (itemsOrdered.contains(med)) {
-			itemsOrdered.remove(med);
-			System.out.println("remove successfully");
-		}
-		else {
-			System.out.println("can't remove");
+		for (int i = 0 ; i < itemsOrdered.size() ; i++) {
+			if (itemsOrdered.get(i).getTitle() == med.getTitle() ) {
+				itemsOrdered.remove(i);
+				System.out.println("remove successfully");
+			}
 		}
 	}
 	public static boolean checkLimitedOrdered() {
